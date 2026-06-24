@@ -4,12 +4,11 @@ pipeline {
 
     stages {
 
-        stage('Check Python') {
+        stage('Install Dependencies') {
 
             steps {
 
-                sh 'python3 --version'
-                sh 'pip3 --version'
+                sh 'pip3 install -r requirements.txt'
 
             }
 
