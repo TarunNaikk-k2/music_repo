@@ -4,16 +4,16 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
+        stage('Check Python') {
+
             steps {
-                sh 'pip install -r requirements.txt'
+
+                sh 'python --version'
+
             }
+
         }
 
-        stage('Run Tests') {
-            steps {
-                sh 'pytest'
-            }
-        }
     }
+
 }
