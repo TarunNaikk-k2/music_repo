@@ -8,7 +8,8 @@ pipeline {
 
             steps {
 
-                sh 'python --version'
+                sh 'python3 --version'
+                sh 'pip3 --version'
 
             }
 
