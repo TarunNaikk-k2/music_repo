@@ -1,16 +1,29 @@
-pipeline{
-    agent any{
-        stages {
-            stage('Build') {
-                steps {
-                    sh 'pip install -r requirements.txt'
-                }
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Install Dependencies') {
+
+            steps {
+
+                bat 'pip install -r requirements.txt'
+
             }
-            stage('Test') {
-                steps {
-                    sh 'pytest'
-                }
-            }
+
         }
+
+        stage('Run Tests') {
+
+            steps {
+
+                bat 'pytest'
+
+            }
+
+        }
+
     }
+
 }
